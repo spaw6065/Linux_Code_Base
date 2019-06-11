@@ -2,13 +2,22 @@
 echo "Enter your Choice(1--> for Create file ,2 for create directory)"
 read UserChoice
 
-if [ $UserChoice -eq 1 ];then
-  sMessage="You have selected option to create file"
-elif [ $UserChoice -eq 2 ];then
-  sMessage="You have selected option to create directory"
-else
-  sMessage="Only supported option is 1 or 2.Please renter correct choice"
-fi
+##if [ $UserChoice -eq 1 ];then
+##  sMessage="You have selected option to create file"
+##elif [ $UserChoice -eq 2 ];then
+##  sMessage="You have selected option to create directory"
+##else
+##  sMessage="Only supported option is 1 or 2.Please renter correct choice"
+##fi
+
+case $UserChoice in 
+	1) sMessage="You have selected option to create file"
+	   ;;
+	2) sMessage="You have selected option to create directory"
+	  ;;
+	*) sMessage="Only supported option is 1 or 2.Pls reenter correct choice"
+          ;;
+esac
 
 echo "sMessage"
 
